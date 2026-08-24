@@ -1,0 +1,29 @@
+app:
+spring:
+  # profiles:
+  #   active: sql
+  application:
+    name: backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/libdb
+    username: libuser
+    password: libpass
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/libdb
+  flyway:
+    enabled: false
+
+server:
+  port: 8082
+
+jwt:
+  secret: "123456789123456789123456789123456789123456789"
+  expiration-ms: 86400000
+
+cors:
+  allowed-origins: http://localhost:5173
